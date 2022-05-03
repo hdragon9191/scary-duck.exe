@@ -863,6 +863,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 470920, guid: a22c9e7ef50fc764da43060141ad70cb, type: 3}
   m_PrefabInstance: {fileID: 1381984314}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1431180294 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4345004808647505961, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+  m_PrefabInstance: {fileID: 6606361258245318889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1458774903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1237,6 +1242,38 @@ PrefabInstance:
     - target: {fileID: 3186891226569529346, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186891226569529349, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: CrouchSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186891226569529349, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: CrouchHeadBobSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186891226569529349, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: CrouchHeadBobAmmount
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186891226569529349, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: CameraRootOfCameraRoot
+      value: 
+      objectReference: {fileID: 1431180294}
+    - target: {fileID: 3186891226569529358, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186891226569529358, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 0a0ed943-50a2-4d54-9316-500338cf3717
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186891226569529358, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: Player/Crouch[/Keyboard/ctrl]
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749326374881288309, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: m_Name
+      value: camera root of the camera root
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}

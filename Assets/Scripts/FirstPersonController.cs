@@ -16,6 +16,8 @@ namespace StarterAssets
 		public float MoveSpeed = 4.0f;
 		[Tooltip("Sprint speed of the character in m/s")]
 		public float SprintSpeed = 6.0f;
+		[Tooltip("Crouch speed of the character in m/s")]
+		public float CrouchSpeed = 2.0f;
 		[Tooltip("Rotation speed of the character")]
 		public float RotationSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
@@ -23,8 +25,10 @@ namespace StarterAssets
 		[Tooltip("Can bob(move head up and down while moving)")]
 		public bool canBob;
 		[Tooltip("head Bob speed")]
+		public float CrouchHeadBobSpeed = 5.0f;
 		public float walkHeadBobSpeed = 5.0f;
-		public float SprintHeadBobSpeed = 18.0f;
+		public float SprintHeadBobSpeed = 18.0f;		
+		public float CrouchHeadBobAmmount = 5.0f;
 		public float WalkHeadBobAmount = 5.0f;
 		public float SprintHeadBobAmount = 8.0f;
 		private float DefaultYPositionOfCamera;
@@ -75,7 +79,7 @@ namespace StarterAssets
 
 		private PlayerInput _playerInput;
 		private CharacterController _controller;
-		private StarterAssetsInputs _input;
+		public StarterAssetsInputs _input;
 		private GameObject _mainCamera;
 
 		private const float _threshold = 0.01f;
@@ -83,6 +87,7 @@ namespace StarterAssets
 		private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
 		public Vector3 inputDirection;
+		public Transform CameraRootOfCameraRoot;
 		private void Awake()
 		{
 			// get a reference to our main camera
@@ -111,8 +116,15 @@ namespace StarterAssets
 			Move();
 			if(canBob)
 			{
-
 				HeadBob();
+			}
+			if (_input.crouch)
+			{
+				CameraRootOfCameraRoot.localPosition = new Vector3(CameraRootOfCameraRoot.localPosition.x, 0.9f, CameraRootOfCameraRoot.localPosition.z);
+			}
+			else
+			{
+				CameraRootOfCameraRoot.localPosition = new Vector3(CameraRootOfCameraRoot.localPosition.x, 1.375f, CameraRootOfCameraRoot.localPosition.z);
 			}
 		}
 
@@ -122,14 +134,11 @@ namespace StarterAssets
 		}
 		private void HeadBob()
 		{
-				Debug.Log(DefaultYPositionOfCamera = Mathf.Sin(Timer));
-			Debug.Log("bob the");
 			if (!Grounded) return;
 			if (Mathf.Abs(inputDirection.x) > 0.1f || Mathf.Abs(inputDirection.z) > 0.1f )
 			{
-				Debug.Log("bob the builder");
-				Timer += Time.deltaTime * (_input.sprint ? SprintHeadBobSpeed : walkHeadBobSpeed);
-				CinemachineCameraTarget.transform.localPosition = new Vector3(CinemachineCameraTarget.transform.localPosition.x, DefaultYPositionOfCamera = Mathf.Sin(Timer) * (_input.sprint ? SprintHeadBobAmount : WalkHeadBobAmount), CinemachineCameraTarget.transform.localPosition.z);
+				Timer += Time.deltaTime * (_input.sprint ? SprintHeadBobSpeed :_input.crouch ? CrouchHeadBobSpeed: walkHeadBobSpeed);
+				CinemachineCameraTarget.transform.localPosition = new Vector3(CinemachineCameraTarget.transform.localPosition.x, DefaultYPositionOfCamera = Mathf.Sin(Timer) * (_input.sprint ? SprintHeadBobAmount : _input.crouch ? CrouchHeadBobAmmount : WalkHeadBobAmount), CinemachineCameraTarget.transform.localPosition.z);
 			}
 		}
 
@@ -165,7 +174,7 @@ namespace StarterAssets
 		private void Move()
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
-			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			float targetSpeed = _input.sprint ? SprintSpeed : _input.crouch ? CrouchSpeed : MoveSpeed;
 
 			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
