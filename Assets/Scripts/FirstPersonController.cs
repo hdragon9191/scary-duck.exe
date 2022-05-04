@@ -152,8 +152,6 @@ namespace StarterAssets
 				
 				float xPos = Input.GetAxis("Mouse X") * mouseSensitifity * Time.deltaTime;
 				float yPos = Input.GetAxis("Mouse Y") * mouseSensitifity * Time.deltaTime;
-				Debug.Log(xPos);
-				Debug.Log(2+"yPos");
 				// clamp our pitch rotation
 				_cinemachineTargetPitch -= yPos;
 				_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
