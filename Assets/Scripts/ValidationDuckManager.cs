@@ -14,6 +14,8 @@ public class ValidationDuckManager : MonoBehaviour {
     void Start() {
         scorePoint = 0;
         defectiveDuckCounter = 0;
+        scorePointText.text = "Duck delivered: " + scorePoint;
+        defectiveDuckCounterText.text = "Duck missed " + defectiveDuckCounter;
     }
 
     public void IncreaseScorePoint() {

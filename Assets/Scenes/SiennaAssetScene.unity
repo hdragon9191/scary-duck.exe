@@ -151,6 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 54116907}
+  - component: {fileID: 54116908}
   m_Layer: 0
   m_Name: ValidationDuckManager
   m_TagString: Untagged
@@ -173,6 +174,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &54116908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54116906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad189410c15a30c4eb9d19491869d0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defectiveDuckCounterText: {fileID: 265237724}
+  scorePointText: {fileID: 1321005042}
 --- !u!1 &57023441
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,8 +837,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3186891226569529349, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: MoveSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186891226569529349, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: SprintSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186891226569529349, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
       propertyPath: mouseSensitifity
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
