@@ -95,7 +95,7 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
-			DefaultYPositionOfCamera = CinemachineCameraTarget.transform.localPosition.y;
+			DefaultYPositionOfCamera = CameraRootOfCameraRoot.transform.localPosition.y;
 		}
 
 		private void Start()
@@ -138,7 +138,7 @@ namespace StarterAssets
 			if (Mathf.Abs(inputDirection.x) > 0.1f || Mathf.Abs(inputDirection.z) > 0.1f )
 			{
 				Timer += Time.deltaTime * (_input.sprint ? SprintHeadBobSpeed :_input.crouch ? CrouchHeadBobSpeed: walkHeadBobSpeed);
-				CinemachineCameraTarget.transform.localPosition = new Vector3(CinemachineCameraTarget.transform.localPosition.x, DefaultYPositionOfCamera = Mathf.Sin(Timer) * (_input.sprint ? SprintHeadBobAmount : _input.crouch ? CrouchHeadBobAmmount : WalkHeadBobAmount), CinemachineCameraTarget.transform.localPosition.z);
+				CameraRootOfCameraRoot.transform.localPosition = new Vector3(CameraRootOfCameraRoot.transform.localPosition.x, DefaultYPositionOfCamera = Mathf.Sin(Timer) * (_input.sprint ? SprintHeadBobAmount : _input.crouch ? CrouchHeadBobAmmount : WalkHeadBobAmount), CameraRootOfCameraRoot.transform.localPosition.z);
 			}
 		}
 
