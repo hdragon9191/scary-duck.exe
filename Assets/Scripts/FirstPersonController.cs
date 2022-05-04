@@ -7,7 +7,6 @@ namespace StarterAssets
 {
 	[RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-	[RequireComponent(typeof(PlayerInput))]
 #endif
 	public class FirstPersonController : MonoBehaviour
 	{
@@ -19,7 +18,7 @@ namespace StarterAssets
 		[Tooltip("Crouch speed of the character in m/s")]
 		public float CrouchSpeed = 2.0f;
 		[Tooltip("Rotation speed of the character")]
-		public float RotationSpeed = 1.0f;
+		public float mouseSensitifity = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 		[Tooltip("Can bob(move head up and down while moving)")]
@@ -77,15 +76,12 @@ namespace StarterAssets
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
-		private PlayerInput _playerInput;
 		private CharacterController _controller;
 		public StarterAssetsInputs _input;
 		private GameObject _mainCamera;
 
 		private const float _threshold = 0.01f;
-		
-		private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
-
+	
 		public Vector3 inputDirection;
 		public Transform CameraRootOfCameraRoot;
 		private void Awake()
@@ -102,7 +98,6 @@ namespace StarterAssets
 		{
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
-			_playerInput = GetComponent<PlayerInput>();
 
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
@@ -118,7 +113,7 @@ namespace StarterAssets
 			{
 				HeadBob();
 			}
-			if (_input.crouch)
+			if (Input.GetButton("crouch"))
 			{
 				CameraRootOfCameraRoot.localPosition = new Vector3(CameraRootOfCameraRoot.localPosition.x, 0.9f, CameraRootOfCameraRoot.localPosition.z);
 			}
@@ -137,8 +132,8 @@ namespace StarterAssets
 			if (!Grounded) return;
 			if (Mathf.Abs(inputDirection.x) > 0.1f || Mathf.Abs(inputDirection.z) > 0.1f )
 			{
-				Timer += Time.deltaTime * (_input.sprint ? SprintHeadBobSpeed :_input.crouch ? CrouchHeadBobSpeed: walkHeadBobSpeed);
-				CameraRootOfCameraRoot.transform.localPosition = new Vector3(CameraRootOfCameraRoot.transform.localPosition.x, DefaultYPositionOfCamera = Mathf.Sin(Timer) * (_input.sprint ? SprintHeadBobAmount : _input.crouch ? CrouchHeadBobAmmount : WalkHeadBobAmount), CameraRootOfCameraRoot.transform.localPosition.z);
+				Timer += Time.deltaTime * (Input.GetButton("_Shift") ? SprintHeadBobSpeed : Input.GetButton("crouch") ? CrouchHeadBobSpeed: walkHeadBobSpeed);
+				CinemachineCameraTarget.transform.localPosition = new Vector3(CinemachineCameraTarget.transform.localPosition.x, DefaultYPositionOfCamera = Mathf.Sin(Timer) * (Input.GetButton("_Shift") ? SprintHeadBobAmount : Input.GetButton("crouch") ? CrouchHeadBobAmmount : WalkHeadBobAmount), CinemachineCameraTarget.transform.localPosition.z);
 			}
 		}
 
@@ -151,36 +146,35 @@ namespace StarterAssets
 
 		private void CameraRotation()
 		{
-			// if there is an input
-			if (_input.look.sqrMagnitude >= _threshold)
 			{
 				//Don't multiply mouse input by Time.deltaTime
-				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
+				float deltaTimeMultiplier =  1 *Time.deltaTime;
 				
-				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
-				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
-
+				float xPos = Input.GetAxis("Mouse X") * mouseSensitifity * Time.deltaTime;
+				float yPos = Input.GetAxis("Mouse Y") * mouseSensitifity * Time.deltaTime;
+				Debug.Log(xPos);
+				Debug.Log(2+"yPos");
 				// clamp our pitch rotation
+				_cinemachineTargetPitch -= yPos;
 				_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
 				// Update Cinemachine camera target pitch
 				CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
 
 				// rotate the player left and right
-				transform.Rotate(Vector3.up * _rotationVelocity);
+				transform.Rotate(Vector3.up * xPos);
 			}
 		}
 
 		private void Move()
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
-			float targetSpeed = _input.sprint ? SprintSpeed : _input.crouch ? CrouchSpeed : MoveSpeed;
-
+			float targetSpeed = Input.GetButton("_Shift") ? SprintSpeed : Input.GetButton("crouch") ? CrouchSpeed : MoveSpeed;
 			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
 			// note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
 			// if there is no input, set the target speed to 0
-			if (_input.move == Vector2.zero) targetSpeed = 0.0f;
+			if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0) targetSpeed = 0.0f;
 
 			// a reference to the players current horizontal velocity
 			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
@@ -204,14 +198,14 @@ namespace StarterAssets
 			}
 
 			// normalise input direction
-			inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
+			inputDirection = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
 
 			// note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
 			// if there is a move input rotate player when the player is moving
 			if (_input.move != Vector2.zero)
 			{
 				// move
-				inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
+				inputDirection = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
 			}
 
 			// move the player
@@ -232,7 +226,7 @@ namespace StarterAssets
 				}
 
 				// Jump
-				if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+				if (Input.GetButton("Jump") && _jumpTimeoutDelta <= 0.0f)
 				{
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
