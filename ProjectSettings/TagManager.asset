@@ -8,6 +8,9 @@ TagManager:
   - Duck
   - DefectiveDuck
   - PerfectDuck
+  - JumpScareTarget
+  - AllTheLights
+  - JumpScareLookTarget
   layers:
   - Default
   - TransparentFX

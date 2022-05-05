@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6782486076057178893}
   - component: {fileID: 6782486076057178882}
   - component: {fileID: 6782486076057178883}
+  - component: {fileID: 31074039}
   m_Layer: 0
   m_Name: Bad duck
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6782486076057178880}
-  m_LocalRotation: {x: -0, y: -0.76078075, z: -0, w: 0.649009}
+  m_LocalRotation: {x: 0, y: -0.76077986, z: 0, w: 0.64901}
   m_LocalPosition: {x: -10.414712, y: 1.0978167, z: -2.3780003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33,7 +34,7 @@ Transform:
   - {fileID: 4825706729971785212}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -99.066, z: 0}
 --- !u!195 &6782486076057178882
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -69,6 +70,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
+  Player: {fileID: 0}
+  BooScaryManager: {fileID: 0}
+--- !u!65 &31074039
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782486076057178880}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4825706729971410276
 PrefabInstance:
   m_ObjectHideFlags: 0
