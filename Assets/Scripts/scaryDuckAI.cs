@@ -64,10 +64,11 @@ public class scaryDuckAI : MonoBehaviour
        float duration = Time.time + 3.0f;
        while (Time.time<duration)
        {
-           AIMode = 2;
-           Debug.Log("search");
-           transform.LookAt(Target);
-           yield return null;
+            AIMode = 2;
+            Debug.Log("search");
+            transform.LookAt(Target);
+            scaryDuckAgent.destination = Target.position;
+            yield return null;
        }
     }
     void FollowPlayer()
