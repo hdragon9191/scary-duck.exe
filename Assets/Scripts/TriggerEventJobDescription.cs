@@ -9,6 +9,10 @@ public class TriggerEventJobDescription : MonoBehaviour {
     [SerializeField] Transform audioSpeakerPosition;
     [SerializeField] Animator animator;
     [SerializeField] GameObject cameraRoot;
+    [SerializeField] GameObject duckImageToShow;
+    [SerializeField] AudioClip jobDescriptionVocal;
+    [SerializeField] AudioSource audioSource;
+
     GameObject cameraRootStarter = null;
     bool triggerEventIsEnded;
 
@@ -22,14 +26,16 @@ public class TriggerEventJobDescription : MonoBehaviour {
 
     IEnumerator JobDescriptionTutorial() {
         animator.enabled = true;
+        audioSource.PlayOneShot(jobDescriptionVocal);
         yield return new WaitForSeconds(3f);
-
+        duckImageToShow.SetActive(true);
         triggerEventIsEnded = true;
         animator.enabled = false;
     }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E) && triggerEventIsEnded) {
+            duckImageToShow.SetActive(false);
             firstPersonController.enabled = true;
             animator.Rebind();
         }
