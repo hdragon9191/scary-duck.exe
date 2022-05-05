@@ -3073,17 +3073,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 88561723863641409, guid: b6affaf1d5fe10b4fa91bf0ce8cde4d4, type: 3}
---- !u!1 &1104977924 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3186891226569529346, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
-  m_PrefabInstance: {fileID: 1303357816}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1104977928 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3186891226569529349, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
   m_PrefabInstance: {fileID: 1303357816}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104977924}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
@@ -3443,6 +3438,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1189804392, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586783159, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2465551716279267834, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.020000137
@@ -5659,18 +5662,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bad duck
       objectReference: {fileID: 0}
-    - target: {fileID: 6782486076057178880, guid: cc1a9a7b9b0e4aa4ba34521cd85bf6f5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6782486076057178883, guid: cc1a9a7b9b0e4aa4ba34521cd85bf6f5, type: 3}
-      propertyPath: goal
-      value: 
-      objectReference: {fileID: 949705056}
-    - target: {fileID: 6782486076057178883, guid: cc1a9a7b9b0e4aa4ba34521cd85bf6f5, type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 1104977924}
     - target: {fileID: 6782486076057178883, guid: cc1a9a7b9b0e4aa4ba34521cd85bf6f5, type: 3}
       propertyPath: BooScaryManager
       value: 
@@ -5681,7 +5672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6782486076057178893, guid: cc1a9a7b9b0e4aa4ba34521cd85bf6f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.72346
+      value: 25.68
       objectReference: {fileID: 0}
     - target: {fileID: 6782486076057178893, guid: cc1a9a7b9b0e4aa4ba34521cd85bf6f5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5689,7 +5680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6782486076057178893, guid: cc1a9a7b9b0e4aa4ba34521cd85bf6f5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.6781864
+      value: -9.05
       objectReference: {fileID: 0}
     - target: {fileID: 6782486076057178893, guid: cc1a9a7b9b0e4aa4ba34521cd85bf6f5, type: 3}
       propertyPath: m_LocalRotation.w

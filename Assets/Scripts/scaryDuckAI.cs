@@ -7,7 +7,7 @@ public class scaryDuckAI : MonoBehaviour
 {
     [SerializeField]
     private Transform EyePosition; //eyeposition is where the raycast will be shot
-    public Transform Player;
+    public Transform Target;
     public JumpScareManager BooScaryManager;
     [Tooltip("how far can the duck see")]
     public float SightDistance;
@@ -15,40 +15,65 @@ public class scaryDuckAI : MonoBehaviour
     public LayerMask PlayerLayer;
     public NavMeshAgent scaryDuckAgent;
     public Transform PatrolCheckPoint;
+    public bool TargetFound;
+    public int AIMode;//0, is patrolling, 1 is follow, 2 is search
+    Coroutine SearchCoroutine;
 
     // Start is called before the first frame update
     void Update()
     {
-        // if ()
+        if (!TargetFound)
         {
-        Patrol();
+            Patrol();
         }
-        // else
-        {
-            // FollowPlayer();
-        }
+        Look();
     }
     void Patrol()
     {
+        AIMode = 0;
         Debug.Log("Patrolling");
         scaryDuckAgent.destination = PatrolCheckPoint.position;
     }
-    void FollowPlayer()
+    void Look()
     {
         //fwd = forward
         fwd = transform.TransformDirection (Vector3.forward);
         RaycastHit hit; 
         if (Physics.Raycast(EyePosition.position, fwd, out hit, SightDistance, PlayerLayer)) 
         {
-            Player = hit.transform;
-            scaryDuckAgent.destination = Player.position;
-            Debug.DrawRay(EyePosition.position, fwd * 1000, Color.green, PlayerLayer);
+            Target = hit.transform;
+            FollowPlayer();
+            Debug.DrawRay(EyePosition.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
+            TargetFound = true;
         }
         else
         {
-            Debug.DrawRay(EyePosition.position, fwd * 1000, Color.red, PlayerLayer);
+            Debug.DrawRay(EyePosition.position, transform.TransformDirection(Vector3.forward) * 50, Color.red);
+            if (TargetFound)
+            {
+                SearchCoroutine = StartCoroutine(Search());
+            }
+            TargetFound = false;
         }
+    }
 
+
+    IEnumerator Search()
+    
+    {
+       float duration = Time.time + 3.0f;
+       while (Time.time<duration)
+       {
+           AIMode = 2;
+           Debug.Log("search");
+           transform.LookAt(Target);
+           yield return null;
+       }
+    }
+    void FollowPlayer()
+    {
+        AIMode = 1;
+        scaryDuckAgent.destination = Target.position;
     }
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
