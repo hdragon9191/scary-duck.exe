@@ -16,7 +16,7 @@ public class scaryDuckAI : MonoBehaviour
     public NavMeshAgent scaryDuckAgent;
     public Transform PatrolCheckPoint;
     public bool TargetFound;
-    public int AIMode;//0, is patrolling, 1 is follow, 2 is search
+    public int AIMode;//this number is just so we can know what mode the AI is in changes this will NOT change the AI mode, 0 is for patrolling, 1 is for follow, 2 is for search
     Coroutine SearchCoroutine;
 
     // Start is called before the first frame update
