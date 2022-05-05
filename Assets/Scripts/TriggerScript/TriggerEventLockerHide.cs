@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TriggerEventLockerHide : MonoBehaviour {
     GameObject playerTrigger;
     bool isLockedPosition;
     bool triggerOneTime;
     [SerializeField] Transform lockerPoint;
+    [SerializeField] GameObject tooltipText;
     private void OnTriggerStay(Collider other) {
         if (Input.GetKeyDown(KeyCode.F) && other.tag == "Player" && !triggerOneTime) {
             triggerOneTime = true;
@@ -38,4 +40,14 @@ public class TriggerEventLockerHide : MonoBehaviour {
         if (isLockedPosition)
             LockPlayerPosition();
     }
+
+
+    private void OnTriggerEnter(Collider other) {
+        tooltipText.SetActive(true);
+        tooltipText.GetComponent<TextMeshProUGUI>().text = "Press F to hide";
+    }
+    private void OnTriggerExit(Collider other) {
+        tooltipText.SetActive(false);
+    }
+  
 }
