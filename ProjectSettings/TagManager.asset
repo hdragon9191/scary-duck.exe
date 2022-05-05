@@ -12,6 +12,7 @@ TagManager:
   - AllTheLights
   - JumpScareLookTarget
   - ScaryDuck
+  - HideLocker
   layers:
   - Default
   - TransparentFX
