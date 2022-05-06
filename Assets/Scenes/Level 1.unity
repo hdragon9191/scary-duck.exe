@@ -5539,6 +5539,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 315697253}
     m_Modifications:
+    - target: {fileID: 7078777857547232730, guid: cda6dd65cea01b845871f8ea15057353, type: 3}
+      propertyPath: ChanceOfBadDuck
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078777857547232730, guid: cda6dd65cea01b845871f8ea15057353, type: 3}
+      propertyPath: TimeToSpawnDuck
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7078777857547232731, guid: cda6dd65cea01b845871f8ea15057353, type: 3}
       propertyPath: m_Name
       value: Duck Spawner
