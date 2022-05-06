@@ -142,52 +142,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2794983277542168627, guid: b6affaf1d5fe10b4fa91bf0ce8cde4d4, type: 3}
---- !u!1 &54116906
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 54116907}
-  - component: {fileID: 54116908}
-  m_Layer: 0
-  m_Name: ValidationDuckManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &54116907
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54116906}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &54116908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54116906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad189410c15a30c4eb9d19491869d0c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defectiveDuckCounterText: {fileID: 0}
-  scorePointText: {fileID: 0}
 --- !u!1 &57023441
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +410,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &507546453 stripped
 GameObject:
@@ -532,7 +486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6635536724750116818, guid: 48d2bcc289340fe4aa65d3144873005a, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6635536724750116818, guid: 48d2bcc289340fe4aa65d3144873005a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1003,7 +957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 424173710200738878, guid: eac3ee555c3ded849ada0f38bd34f8ed, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 424173710200738878, guid: eac3ee555c3ded849ada0f38bd34f8ed, type: 3}
       propertyPath: m_LocalPosition.x
