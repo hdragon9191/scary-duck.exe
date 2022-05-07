@@ -18,6 +18,11 @@ public class scaryDuckAI : MonoBehaviour
     public bool TargetFound;
     public int AIMode;//this number is just so we can know what mode the AI is in changes this will NOT change the AI mode, 0 is for patrolling, 1 is for follow, 2 is for search
     Coroutine SearchCoroutine;
+private GameObject playerTarget;
+public void Awake()
+{
+    playerTarget = GameObject.FindGameObjectWithTag ("Player");
+}
 
     // Start is called before the first frame update
     void Update()
@@ -39,13 +44,15 @@ public class scaryDuckAI : MonoBehaviour
         //fwd = forward
         fwd = transform.TransformDirection (Vector3.forward);
         RaycastHit hit; 
-        if (Physics.Raycast(EyePosition.position, fwd, out hit, SightDistance, PlayerLayer)) 
+        if (Physics.Raycast(EyePosition.position, fwd, out hit, SightDistance))
         {
+            if (hit.transform.gameObject == playerTarget)
+            {
             Target = hit.transform;
             FollowPlayer();
             Debug.DrawRay(EyePosition.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
             TargetFound = true;
-        }
+            }
         else
         {
             Debug.DrawRay(EyePosition.position, transform.TransformDirection(Vector3.forward) * 50, Color.red);
@@ -54,6 +61,7 @@ public class scaryDuckAI : MonoBehaviour
                 SearchCoroutine = StartCoroutine(Search());
             }
             TargetFound = false;
+        }
         }
     }
 

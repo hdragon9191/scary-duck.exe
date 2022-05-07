@@ -295,9 +295,10 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 7119073470487044441}
   TopClamp: 89
   BottomClamp: -89
-  _input: {fileID: 0}
+  _speed: 0
   inputDirection: {x: 0, y: 0, z: 0}
   CameraRootOfCameraRoot: {fileID: 4345004808647505961}
+  fpsLimit: 30
 --- !u!114 &4673175068091069170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -808,7 +809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3
+      value: 2.2999997
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.z
@@ -878,7 +879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3
+      value: 2.2999997
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.z
