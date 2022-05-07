@@ -35,7 +35,7 @@ public class TriggerEventLockerHide : MonoBehaviour {
     }
 
     void LockPlayerPosition() {
-        playerTrigger.transform.position = Vector3.Lerp(playerTrigger.transform.position, gameObject.transform.position, Time.deltaTime * 1);
+        playerTrigger.transform.position = Vector3.Lerp(new Vector3(playerTrigger.transform.position.x, playerTrigger.transform.position.y + 0.03f, playerTrigger.transform.position.z), gameObject.transform.position, Time.deltaTime * 1);
         playerTrigger.transform.rotation = Quaternion.Lerp(playerTrigger.transform.rotation, gameObject.transform.rotation, Time.deltaTime * 1);
     }
 

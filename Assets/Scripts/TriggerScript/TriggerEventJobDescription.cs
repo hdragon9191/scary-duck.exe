@@ -12,6 +12,7 @@ public class TriggerEventJobDescription : MonoBehaviour {
     [SerializeField] GameObject duckImageToShow;
     [SerializeField] AudioClip jobDescriptionVocal;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] DuckSpawner DuckSpawner;
 
     GameObject cameraRootStarter = null;
     bool triggerEventIsEnded;
@@ -21,6 +22,7 @@ public class TriggerEventJobDescription : MonoBehaviour {
         animator.enabled = false;
         triggerEventIsEnded = false;
         firstPersonController.enabled = false;
+        DuckSpawner.enabled = false;
         if (!skipTutorial)
             StartCoroutine(JobDescriptionTutorial());
         else {
@@ -41,6 +43,7 @@ public class TriggerEventJobDescription : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E) && triggerEventIsEnded) {
             duckImageToShow.SetActive(false);
             firstPersonController.enabled = true;
+            DuckSpawner.enabled = true;
             animator.Rebind();
         }
     }

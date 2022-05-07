@@ -120,7 +120,7 @@ namespace StarterAssets
 			}
 			else
 			{
-				CameraRootOfCameraRoot.localPosition = new Vector3(CameraRootOfCameraRoot.localPosition.x, 2.2f, CameraRootOfCameraRoot.localPosition.z);
+				CameraRootOfCameraRoot.localPosition = new Vector3(CameraRootOfCameraRoot.localPosition.x, 1.1f, CameraRootOfCameraRoot.localPosition.z);
 			}
 		}
 

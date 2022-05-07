@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1293,6 +1293,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7078777857547232733, guid: cda6dd65cea01b845871f8ea15057353, type: 3}
   m_PrefabInstance: {fileID: 7078777857852515681}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &499661488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7078777857547232730, guid: cda6dd65cea01b845871f8ea15057353, type: 3}
+  m_PrefabInstance: {fileID: 7078777857852515681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9efb07b043e9a974bb95903def56ee14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &505653694
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,6 +4686,7 @@ MonoBehaviour:
   duckImageToShow: {fileID: 674032481}
   jobDescriptionVocal: {fileID: 8300000, guid: 3289e396b6a53aa49a8e4f2b489d3e22, type: 3}
   audioSource: {fileID: 505653695}
+  DuckSpawner: {fileID: 499661488}
   skipTutorial: 1
 --- !u!4 &1954583121 stripped
 Transform:
