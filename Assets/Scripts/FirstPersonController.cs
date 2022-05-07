@@ -106,7 +106,7 @@ namespace StarterAssets
 
 		private void Update()
 		{
-            Application.targetFrameRate = fpsLimit;
+            // Application.targetFrameRate = fpsLimit;
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
@@ -122,12 +122,9 @@ namespace StarterAssets
 			{
 				CameraRootOfCameraRoot.localPosition = new Vector3(CameraRootOfCameraRoot.localPosition.x, 1.1f, CameraRootOfCameraRoot.localPosition.z);
 			}
-		}
-
-		private void LateUpdate()
-		{
 			CameraRotation();
 		}
+
 		private void HeadBob()
 		{
 			if (!Grounded) return;
