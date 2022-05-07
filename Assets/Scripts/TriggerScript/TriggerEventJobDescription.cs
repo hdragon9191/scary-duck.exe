@@ -15,13 +15,17 @@ public class TriggerEventJobDescription : MonoBehaviour {
 
     GameObject cameraRootStarter = null;
     bool triggerEventIsEnded;
-
+    public bool skipTutorial;
     void Start() {
         cameraRootStarter = cameraRoot;
         animator.enabled = false;
         triggerEventIsEnded = false;
         firstPersonController.enabled = false;
-        StartCoroutine(JobDescriptionTutorial());
+        if (!skipTutorial)
+            StartCoroutine(JobDescriptionTutorial());
+        else {
+            firstPersonController.enabled = true;
+        }
     }
 
     IEnumerator JobDescriptionTutorial() {
