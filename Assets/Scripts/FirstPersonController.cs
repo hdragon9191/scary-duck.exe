@@ -67,7 +67,7 @@ namespace StarterAssets
 		private float _cinemachineTargetPitch;
 
 		// player
-		private float _speed;
+		public float _speed;
 		private float _rotationVelocity;
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
@@ -77,13 +77,13 @@ namespace StarterAssets
 		private float _fallTimeoutDelta;
 
 		private CharacterController _controller;
-		public StarterAssetsInputs _input;
 		private GameObject _mainCamera;
 
 		private const float _threshold = 0.01f;
 	
 		public Vector3 inputDirection;
 		public Transform CameraRootOfCameraRoot;
+		public int fpsLimit = 300;
 		private void Awake()
 		{
 			// get a reference to our main camera
@@ -96,8 +96,8 @@ namespace StarterAssets
 
 		private void Start()
 		{
+            Cursor.lockState = CursorLockMode.Locked;
 			_controller = GetComponent<CharacterController>();
-			_input = GetComponent<StarterAssetsInputs>();
 
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
@@ -106,6 +106,7 @@ namespace StarterAssets
 
 		private void Update()
 		{
+            Application.targetFrameRate = fpsLimit;
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
@@ -176,35 +177,35 @@ namespace StarterAssets
 
 			// a reference to the players current horizontal velocity
 			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
-
+			Debug.Log("current horizontal speed" + currentHorizontalSpeed);
 			float speedOffset = 0.1f;
-			float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
+			// float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
 
 			// accelerate or decelerate to target speed
-			if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
-			{
-				// creates curved result rather than a linear one giving a more organic speed change
-				// note T in Lerp is clamped, so we don't need to clamp our speed
-				_speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
+			// if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
+			// {
+			// 	// creates curved result rather than a linear one giving a more organic speed change
+			// 	// note T in Lerp is clamped, so we don't need to clamp our speed
+			// 	// _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
 
-				// round speed to 3 decimal places
-				_speed = Mathf.Round(_speed * 1000f) / 1000f;
-			}
-			else
-			{
+			// 	// round speed to 3 decimal places
+			// 	_speed = Mathf.Round(_speed * 1000f) / 1000f;
+			// }
+			// else
+			// {
 				_speed = targetSpeed;
-			}
+			// }
 
 			// normalise input direction
 			inputDirection = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
 
 			// note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
 			// if there is a move input rotate player when the player is moving
-			if (_input.move != Vector2.zero)
-			{
-				// move
-				inputDirection = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
-			}
+			// if (_input.move != Vector2.zero)
+			// {
+			// 	// move
+			// 	inputDirection = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
+			// }
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
@@ -248,7 +249,7 @@ namespace StarterAssets
 				}
 
 				// if we are not grounded, do not jump
-				_input.jump = false;
+				// _input.jump = false;
 			}
 
 			// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
