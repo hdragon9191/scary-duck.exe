@@ -13,17 +13,19 @@ public class TriggerEventLockerHide : MonoBehaviour {
     private void OnTriggerStay(Collider other) {
         if (Input.GetKeyDown(KeyCode.F) && other.tag == "Player" && !triggerOneTime) {
             triggerOneTime = true;
+            gameObject.transform.GetChild(1).gameObject.layer = LayerMask.NameToLayer("Locker");
             StartCoroutine(OpenAndCloseDoorAnimation(other.gameObject));
         }
 
     }
 
     IEnumerator OpenAndCloseDoorAnimation(GameObject player) {
+        isLockedPosition = true;
         player.GetComponent<CharacterController>().enabled = false;
         gameObject.transform.GetChild(1).GetComponent<Animator>().enabled = true;
         playerTrigger = player;
-        isLockedPosition = true;
         yield return new WaitForSeconds(2.4f);
+        gameObject.transform.GetChild(1).gameObject.layer = LayerMask.NameToLayer("Default");
         gameObject.transform.GetChild(1).GetComponent<Animator>().Rebind();
         gameObject.transform.GetChild(1).GetComponent<Animator>().enabled = false;
         isLockedPosition = false;

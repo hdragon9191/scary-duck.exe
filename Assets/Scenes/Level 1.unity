@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1293,17 +1293,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7078777857547232733, guid: cda6dd65cea01b845871f8ea15057353, type: 3}
   m_PrefabInstance: {fileID: 7078777857852515681}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &499661488 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7078777857547232730, guid: cda6dd65cea01b845871f8ea15057353, type: 3}
-  m_PrefabInstance: {fileID: 7078777857852515681}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9efb07b043e9a974bb95903def56ee14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &505653694
 GameObject:
   m_ObjectHideFlags: 0
@@ -3360,6 +3349,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1258209025942932505, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c76044ca186b1de408a24caa84a771e4, type: 2}
     - target: {fileID: 2465551716279267834, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.019999998
@@ -4676,13 +4669,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstPersonController: {fileID: 1104977928}
-  DuckSpawner: {fileID: 499661488}
   audioSpeakerPosition: {fileID: 996815461}
   animator: {fileID: 256218686}
   cameraRoot: {fileID: 256218684}
   duckImageToShow: {fileID: 674032481}
   jobDescriptionVocal: {fileID: 8300000, guid: 3289e396b6a53aa49a8e4f2b489d3e22, type: 3}
   audioSource: {fileID: 505653695}
+  skipTutorial: 1
 --- !u!4 &1954583121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6620606471315125639, guid: bce8780e1f8988b4bbe82f948edb37c0, type: 3}
@@ -5195,6 +5188,18 @@ PrefabInstance:
       value: 'Night 1
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898457520660893397, guid: 48d2bcc289340fe4aa65d3144873005a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898457520660893397, guid: 48d2bcc289340fe4aa65d3144873005a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898457520660893397, guid: 48d2bcc289340fe4aa65d3144873005a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 6635536724750116818, guid: 48d2bcc289340fe4aa65d3144873005a, type: 3}
       propertyPath: m_Pivot.x
