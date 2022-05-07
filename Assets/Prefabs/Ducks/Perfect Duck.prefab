@@ -16,7 +16,7 @@ GameObject:
   m_TagString: PerfectDuck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &4878263289977453171
 Transform:
@@ -129,6 +129,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9285a0345081ec14eafbbfc8cd0ac0ea, type: 3}
       propertyPath: m_Name
       value: Duck_Small_Good
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9285a0345081ec14eafbbfc8cd0ac0ea, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9285a0345081ec14eafbbfc8cd0ac0ea, type: 3}
