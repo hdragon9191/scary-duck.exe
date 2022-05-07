@@ -24,7 +24,7 @@ public class TriggerEventLockerExit : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         tooltipText.SetActive(true);
-        tooltipText.GetComponent<TextMeshProUGUI>().text = "Press E to exit";
+        tooltipText.GetComponent<TextMeshProUGUI>().text = "Repeatedly pressing E to exit";
     }
     private void OnTriggerExit(Collider other) {
         tooltipText.SetActive(false);

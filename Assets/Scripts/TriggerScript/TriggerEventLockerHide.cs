@@ -24,6 +24,7 @@ public class TriggerEventLockerHide : MonoBehaviour {
         playerTrigger = player;
         isLockedPosition = true;
         yield return new WaitForSeconds(2.4f);
+        gameObject.transform.GetChild(1).GetComponent<Animator>().Rebind();
         gameObject.transform.GetChild(1).GetComponent<Animator>().enabled = false;
         isLockedPosition = false;
         triggerOneTime = false;
