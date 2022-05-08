@@ -2,37 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Invintory : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
     public int NumberOfItemInInevintory;
     public List<GameObject> DucksInInvintory;
     public LayerMask layerMask;
-    public float Reach = 10;
+    public float Range = 10;
     public Transform TeleportItemHere, duckSpawner;
     public GameObject DucksInInvintory_;
-    public FirstPersonController FirstPersonController;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+ 
     void Update()
     {
-      if (NumberOfItemInInevintory >= 1) FirstPersonController.decreaseSpeed = 1.2f;
-      if (NumberOfItemInInevintory >= 3) FirstPersonController.decreaseSpeed = 3f;
-      if (NumberOfItemInInevintory >= 3) 
-      {
-      FirstPersonController.decreaseSpeed = 3.5f; 
-      return;
-      } 
      if (Input.GetButtonDown("Fire1"))
      {
          // Cast a ray from the camera to where you clicked
          Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
  
-         if (Physics.Raycast(ray, out RaycastHit hit,Reach, layerMask))
+         if (Physics.Raycast(ray, out RaycastHit hit, Range, layerMask))
          {
             NumberOfItemInInevintory ++;
             GameObject hitObject = hit.collider.gameObject;
@@ -51,7 +37,6 @@ public class Invintory : MonoBehaviour
      if (Input.GetButtonDown("Fire2"))
      {
         if (DucksInInvintory.Count <= 0) return;
-        NumberOfItemInInevintory --;
         int number = DucksInInvintory.Count;
         DucksInInvintory_ = DucksInInvintory[number -1];
         DucksInInvintory.Remove(DucksInInvintory_);
