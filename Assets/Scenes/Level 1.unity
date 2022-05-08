@@ -4603,6 +4603,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Walkway
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d5e7194dcd139449b840d18c5a471db, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 3682385533488917729, guid: 8d5e7194dcd139449b840d18c5a471db, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -6341,6 +6345,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6e31550c9a1c9524f9215634883188d0, type: 3}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6e31550c9a1c9524f9215634883188d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e31550c9a1c9524f9215634883188d0, type: 3}
