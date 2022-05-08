@@ -3,11 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 #endif
 
-namespace StarterAssets
-{
-	[RequireComponent(typeof(CharacterController))]
-#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-#endif
+
 	public class FirstPersonController : MonoBehaviour
 	{
 		[Header("Player")]
@@ -68,6 +64,7 @@ namespace StarterAssets
 
 		// player
 		public float _speed;
+		public float targetSpeed;
 		private float _rotationVelocity;
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
@@ -84,6 +81,7 @@ namespace StarterAssets
 		public Vector3 inputDirection;
 		public Transform CameraRootOfCameraRoot;
 		public int fpsLimit = 300;
+		public float decreaseSpeed;
 		private void Awake()
 		{
 			// get a reference to our main camera
@@ -165,7 +163,7 @@ namespace StarterAssets
 		private void Move()
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
-			float targetSpeed = Input.GetButton("_Shift") ? SprintSpeed : Input.GetButton("crouch") ? CrouchSpeed : MoveSpeed;
+			targetSpeed = Input.GetButton("_Shift") ? SprintSpeed : Input.GetButton("crouch") ? CrouchSpeed : MoveSpeed;
 			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
 			// note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
@@ -190,7 +188,7 @@ namespace StarterAssets
 			// }
 			// else
 			// {
-				_speed = targetSpeed;
+				_speed = targetSpeed - decreaseSpeed;
 			// }
 
 			// normalise input direction
@@ -275,4 +273,3 @@ namespace StarterAssets
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
 	}
-}
