@@ -27,6 +27,7 @@ public class TriggerEventJobDescription : MonoBehaviour {
             StartCoroutine(JobDescriptionTutorial());
         else {
             firstPersonController.enabled = true;
+            DuckSpawner.enabled = true;
         }
     }
 
