@@ -113,6 +113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 8187313172149774894}
   tooltipText: {fileID: 0}
+  audioSource: {fileID: 0}
+  closeLockerClip: {fileID: 8300000, guid: 58671b7762fa38e4cb8780bc2aa5e5b5, type: 3}
 --- !u!64 &7046538920646409820
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -190,6 +192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockerPoint: {fileID: 1033077602204327516}
   tooltipText: {fileID: 0}
+  audioSource: {fileID: 0}
+  openLockerClip: {fileID: 8300000, guid: 56c0f84cf7b59e141a70fcc6c8a941ed, type: 3}
 --- !u!1 &7809989188917604372
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,6 +238,7 @@ GameObject:
   - component: {fileID: 2766307616307585523}
   - component: {fileID: 1009268669056518156}
   - component: {fileID: 8048288947655199715}
+  - component: {fileID: 3499081998777478389}
   m_Layer: 0
   m_Name: Locker_Hideable_Door
   m_TagString: Untagged
@@ -340,3 +345,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1386308238438900379, guid: fc0882f60888d5d4aab671c18e7e0ea2, type: 3}
+--- !u!114 &3499081998777478389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187313172149774894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e63a50d398cbb438b83b8829ab3dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  openLockerClip: {fileID: 8300000, guid: 56c0f84cf7b59e141a70fcc6c8a941ed, type: 3}

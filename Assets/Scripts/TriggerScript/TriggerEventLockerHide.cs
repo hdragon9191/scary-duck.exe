@@ -10,10 +10,17 @@ public class TriggerEventLockerHide : MonoBehaviour {
     bool triggerOneTime;
     [SerializeField] Transform lockerPoint;
     [SerializeField] GameObject tooltipText;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip openLockerClip;
+    private void Awake() {
+        audioSource = FindObjectOfType<AudioSource>();
+    }
+
     private void OnTriggerStay(Collider other) {
         if (Input.GetKeyDown(KeyCode.F) && other.tag == "Player" && !triggerOneTime) {
             triggerOneTime = true;
             gameObject.transform.GetChild(1).gameObject.layer = LayerMask.NameToLayer("Locker");
+            audioSource.PlayOneShot(openLockerClip);
             StartCoroutine(OpenAndCloseDoorAnimation(other.gameObject));
         }
 
