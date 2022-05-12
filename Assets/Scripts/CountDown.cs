@@ -15,9 +15,10 @@ public class Countdown : MonoBehaviour {
 	void Update() {
 		TimeStart -= Time.deltaTime;
 		textBox.text = Mathf.Round(TimeStart).ToString();
-        if (TimeStart <= 0) {
-			Debug.Log("GameOver");
-			//TODO Gameover overlay or something similar
-        }
 	}
+
+	public void DecreaseTime(float amount) {
+		TimeStart -= amount;
+	}
+
 }

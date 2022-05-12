@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class DespawnDuck : MonoBehaviour {
     ValidationDuckManager validationDuckManager;
+    [SerializeField] Countdown countdown;
+    public float TimeLostPerDuck;
     private void Start() {
+        TimeLostPerDuck = 20f;
         validationDuckManager = FindObjectOfType<ValidationDuckManager>();
     }
 
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "DefectiveDuck") {
 
-            validationDuckManager.IncreaseDefectiveDuckCounter();
+            countdown.DecreaseTime(TimeLostPerDuck);
 
             Destroy(collision.gameObject);
         }

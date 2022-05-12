@@ -24,7 +24,6 @@ public class SpawnManager : MonoBehaviour {
     }
 
     private void OnTriggerStay(Collider other) {
-        //TODO manage a cap for min and max
         if (Input.GetKeyDown(KeyCode.DownArrow) && other.tag == "Player") {
             AmountTimeSpawn = (AmountTimeSpawn - 0.1f);
             if (AmountTimeSpawn <= MinValueSpawn) {
