@@ -5,17 +5,17 @@ using UnityEngine.UI;
 using TMPro;
 
 public class Countdown : MonoBehaviour {
-	public float timeStart = 1000;
+	public float TimeStart = 1000;
 	public TextMeshProUGUI textBox;
 
 	void Start() {
-		textBox.text = timeStart.ToString();
+		textBox.text = TimeStart.ToString();
 	}
 
 	void Update() {
-		timeStart -= Time.deltaTime;
-		textBox.text = Mathf.Round(timeStart).ToString();
-        if (timeStart <= 0) {
+		TimeStart -= Time.deltaTime;
+		textBox.text = Mathf.Round(TimeStart).ToString();
+        if (TimeStart <= 0) {
 			Debug.Log("GameOver");
 			//TODO Gameover overlay or something similar
         }

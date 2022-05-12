@@ -6,21 +6,21 @@ using TMPro;
 
 public class ValidationDuckManager : MonoBehaviour {
 
-    private int scorePoint;
+    public int ScorePoint;
     private int defectiveDuckCounter;
     [SerializeField] TextMeshProUGUI defectiveDuckCounterText;
     [SerializeField] TextMeshProUGUI scorePointText;
 
     void Start() {
-        scorePoint = 0;
+        ScorePoint = 0;
         defectiveDuckCounter = 0;
-        scorePointText.text = "Duck delivered: " + scorePoint;
+        scorePointText.text = "Duck delivered: " + ScorePoint;
         defectiveDuckCounterText.text = "Duck missed " + defectiveDuckCounter;
     }
 
     public void IncreaseScorePoint() {
-        scorePoint++;
-        scorePointText.text = "Duck delivered: " + scorePoint;
+        ScorePoint++;
+        scorePointText.text = "Duck delivered: " + ScorePoint;
     }
 
     public void IncreaseDefectiveDuckCounter() {
