@@ -7,7 +7,7 @@ public class DespawnDuck : MonoBehaviour {
     [SerializeField] Countdown countdown;
     public float TimeLostPerDuck;
     private void Start() {
-        TimeLostPerDuck = 20f;
+        TimeLostPerDuck = 100f;
         validationDuckManager = FindObjectOfType<ValidationDuckManager>();
     }
 
