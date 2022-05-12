@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class SpawnManager : MonoBehaviour {
     public float AmountTimeSpawn;
     int children;
     [SerializeField] GameObject tooltipText;
+    [SerializeField] GameObject spawnRatio;
 
     private void Start() {
         AmountTimeSpawn = 1f;
         children = transform.childCount;
+    }
+
+    private void Update() {
+        spawnRatio.GetComponent<TextMeshPro>().text = "" +Math.Round(AmountTimeSpawn,2); //dump
     }
 
     private void OnTriggerStay(Collider other) {
