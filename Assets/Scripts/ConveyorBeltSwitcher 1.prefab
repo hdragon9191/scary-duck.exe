@@ -93,7 +93,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960286065719351961}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.9633217, y: 0.9635184, z: 2.5270572}
@@ -110,3 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a37775dc283872e40b285ec84938c599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  conveyorBeltActivator: {fileID: 0}
+  tooltipText: {fileID: 0}

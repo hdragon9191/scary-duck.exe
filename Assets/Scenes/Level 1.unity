@@ -11340,6 +11340,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7710021308772010918, guid: d2fd39c1a63a73e4d9fe1cf9d93cdff7, type: 3}
+      propertyPath: tooltipText
+      value: 
+      objectReference: {fileID: 886703056}
+    - target: {fileID: 7710021308772010918, guid: d2fd39c1a63a73e4d9fe1cf9d93cdff7, type: 3}
       propertyPath: conveyorBeltActivator
       value: 
       objectReference: {fileID: 842309500}
@@ -16283,6 +16287,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7710021308772010918, guid: d2fd39c1a63a73e4d9fe1cf9d93cdff7, type: 3}
+      propertyPath: tooltipText
+      value: 
+      objectReference: {fileID: 886703056}
+    - target: {fileID: 7710021308772010918, guid: d2fd39c1a63a73e4d9fe1cf9d93cdff7, type: 3}
       propertyPath: conveyorBeltActivator
       value: 
       objectReference: {fileID: 266374602}
@@ -16621,6 +16629,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7710021308772010918, guid: d2fd39c1a63a73e4d9fe1cf9d93cdff7, type: 3}
+      propertyPath: tooltipText
+      value: 
+      objectReference: {fileID: 886703056}
     - target: {fileID: 7710021308772010918, guid: d2fd39c1a63a73e4d9fe1cf9d93cdff7, type: 3}
       propertyPath: conveyorBeltActivator
       value: 
