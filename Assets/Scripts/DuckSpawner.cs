@@ -7,14 +7,14 @@ public class DuckSpawner : MonoBehaviour {
     [SerializeField] ConveyorBeltActivator conveyorBeltActivator;
     public float TimeToSpawnDuck = 2f;
     //this is so we can still have the original value of TimeToSpawnDuck even after changing it 
-    private float _TimeToSpawnDuck;
+    public float TuningSpawnDuck;
     [Tooltip("Change this number to change the chance of a bad duck to spawn")]
     public float ChanceOfBadDuck = 10;
     public GameObject[] Ducks;
     // Start is called before the first frame update
     FactoryElectricity factoryElectricity;
     void Start() {
-        _TimeToSpawnDuck = TimeToSpawnDuck;
+        TuningSpawnDuck = TimeToSpawnDuck;
         factoryElectricity = FindObjectOfType<FactoryElectricity>();
     }
 
@@ -47,6 +47,6 @@ public class DuckSpawner : MonoBehaviour {
             GameObject duck = Instantiate(Ducks[1], transform.position, Quaternion.identity);
             duck.transform.parent = this.transform;
         }
-        TimeToSpawnDuck = _TimeToSpawnDuck;
+        TimeToSpawnDuck = TuningSpawnDuck;
     }
 }
