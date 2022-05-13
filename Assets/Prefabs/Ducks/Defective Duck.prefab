@@ -70,6 +70,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4972828837872821272}
     m_Modifications:
+    - target: {fileID: 120336, guid: 7f232b993a41d4945b2695e264d345d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 125702, guid: 7f232b993a41d4945b2695e264d345d9, type: 3}
       propertyPath: m_Name
       value: HologramYellow
@@ -77,6 +81,18 @@ PrefabInstance:
     - target: {fileID: 411220, guid: 7f232b993a41d4945b2695e264d345d9, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 411220, guid: 7f232b993a41d4945b2695e264d345d9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 411220, guid: 7f232b993a41d4945b2695e264d345d9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 411220, guid: 7f232b993a41d4945b2695e264d345d9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 411220, guid: 7f232b993a41d4945b2695e264d345d9, type: 3}
       propertyPath: m_LocalPosition.x

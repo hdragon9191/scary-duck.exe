@@ -1896,7 +1896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32327b4a3daf3f42924aa228830c629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsActive: 1
+  IsActive: 0
 --- !u!1 &268096859
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,7 +2444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeStart: 1000
-  textBox: {fileID: 0}
+  textBox: {fileID: 315489334}
 --- !u!1 &318770091
 GameObject:
   m_ObjectHideFlags: 0
@@ -6387,7 +6387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32327b4a3daf3f42924aa228830c629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsActive: 1
+  IsActive: 0
 --- !u!4 &852457763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1960286065719641785, guid: d2fd39c1a63a73e4d9fe1cf9d93cdff7, type: 3}
@@ -10600,7 +10600,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1104977935, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
       propertyPath: Range
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1104977935, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
       propertyPath: duckSpawner
@@ -10614,6 +10614,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c76044ca186b1de408a24caa84a771e4, type: 2}
+    - target: {fileID: 2465551716279267333, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2465551716279267834, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.019999998
@@ -10629,6 +10633,10 @@ PrefabInstance:
     - target: {fileID: 2834588210669659904, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834588210669659904, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2834588210669659906, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
       propertyPath: near clip plane
@@ -10725,6 +10733,10 @@ PrefabInstance:
     - target: {fileID: 3687707519984187287, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749326374881288309, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4345004808647505961, guid: de7cd9cfb714bfe48a8cd32cbb5fba5f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14182,7 +14194,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: -4.907089e-36}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: 1922863}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -15292,6 +15304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: {fileID: 315489336}
   validationDuckManager: {fileID: 535410559}
+  FinalScore: 0
 --- !u!1001 &1936415830
 PrefabInstance:
   m_ObjectHideFlags: 0
