@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
     public Transform TeleportItemHere, duckSpawner;
     public GameObject DucksInInvintory_;
     public FirstPersonController FirstPersonController;
- 
+    [SerializeField] Camera mainCamera;
     void Update()
     {
       if (NumberOfItemInInevintory <= 0) FirstPersonController.decreaseSpeed = 0f;
@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
      if (Input.GetButtonDown("Fire1"))
      {
          // Cast a ray from the camera to where you clicked
-         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
  
          if (Physics.Raycast(ray, out RaycastHit hit, Range, layerMask))
          {

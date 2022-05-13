@@ -25,10 +25,14 @@ public class GameOverManager : MonoBehaviour {
         if (SceneManager.GetActiveScene().name == "Level 1") {
             if (countdown.TimeStart < 0) {
                 SceneManager.LoadScene("GameOver");
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
             else if (validationDuckManager.ScorePoint >= 1000) {
                 FinalScore = countdown.TimeStart;
                 SceneManager.LoadScene("GameWin");
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
 
