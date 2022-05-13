@@ -6,11 +6,19 @@ using UnityEngine;
 public class ConveyBeltSwitcher : MonoBehaviour {
     [SerializeField] ConveyorBeltActivator conveyorBeltActivator;
     [SerializeField] GameObject tooltipText;
+    AudioManager audioManager;
+    private void Start() {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
 
     private void OnTriggerStay(Collider other) {
         if (Input.GetKeyDown(KeyCode.E) && other.tag == "Player") {
             conveyorBeltActivator.IsActive = !conveyorBeltActivator.IsActive;
-            //TODO add noise of switch off
+            if (conveyorBeltActivator.IsActive)
+                audioManager.ConveyorOnClip();
+            else
+                audioManager.ConveyorOffClip();
         }
     }
 

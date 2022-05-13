@@ -11,12 +11,14 @@ public class SpawnManager : MonoBehaviour {
     [SerializeField] GameObject spawnRatio;
     public float MaxValueSpawn;
     public float MinValueSpawn;
+    AudioManager audioManager;
 
     private void Start() {
         MaxValueSpawn = 2f;
         MinValueSpawn = 0.3f;
         AmountTimeSpawn = 1f;
         children = transform.childCount;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Update() {
@@ -30,7 +32,7 @@ public class SpawnManager : MonoBehaviour {
                 AmountTimeSpawn = MinValueSpawn;
             }
             CalibrateRatioSpawn(AmountTimeSpawn);
-            //TODO add noise of switch off
+            audioManager.ButtonClip();
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) && other.tag == "Player") {
             AmountTimeSpawn = (AmountTimeSpawn + 0.1f);
@@ -38,7 +40,7 @@ public class SpawnManager : MonoBehaviour {
                 AmountTimeSpawn = MaxValueSpawn;
             }
             CalibrateRatioSpawn(AmountTimeSpawn);
-            //TODO add noise of switch off
+            audioManager.ButtonClip();
         }
     }
 
