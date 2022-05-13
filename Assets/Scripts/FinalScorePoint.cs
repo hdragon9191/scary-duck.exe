@@ -14,6 +14,6 @@ public class FinalScorePoint : MonoBehaviour
 
     void Update()
     {
-        finalScorePointText.text = "You Won! Total score is: " + gameOverManager.FinalScore;
+        finalScorePointText.text = "You Won! Total score is: " + Mathf.RoundToInt(gameOverManager.FinalScore);
     }
 }

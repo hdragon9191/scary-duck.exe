@@ -5,9 +5,9 @@ using UnityEngine;
 public class DespawnDuck : MonoBehaviour {
     ValidationDuckManager validationDuckManager;
     [SerializeField] Countdown countdown;
-    public float TimeLostPerDuck;
+    [SerializeField] float TimeLostPerDuck=20f;
+
     private void Start() {
-        TimeLostPerDuck = 100f;
         validationDuckManager = FindObjectOfType<ValidationDuckManager>();
     }
 

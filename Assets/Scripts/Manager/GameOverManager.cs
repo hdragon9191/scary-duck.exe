@@ -7,14 +7,18 @@ public class GameOverManager : MonoBehaviour {
     [SerializeField] Countdown countdown;
     [SerializeField] ValidationDuckManager validationDuckManager;
     public float FinalScore;
-    void Awake() {
-        int numGameSessions = FindObjectsOfType<GameOverManager>().Length;
-        if (numGameSessions > 1) {
+    public static GameOverManager instance;
+
+    private void Start() {
+        DontDestroyOnLoad(this);
+    }
+
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+        else
             Destroy(gameObject);
-        }
-        else {
-            DontDestroyOnLoad(gameObject);
-        }
     }
 
     void Update() {
