@@ -3,18 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverManager : MonoBehaviour
-{
+public class GameOverManager : MonoBehaviour {
     [SerializeField] Countdown countdown;
     [SerializeField] ValidationDuckManager validationDuckManager;
- 
-    void Update()
-    {
-        if (countdown.TimeStart < 0) {
-            SceneManager.LoadScene("GameOver");
+    public float FinalScore;
+    void Awake() {
+        int numGameSessions = FindObjectsOfType<GameOverManager>().Length;
+        if (numGameSessions > 1) {
+            Destroy(gameObject);
         }
-        if (validationDuckManager.ScorePoint>=1000) {
-            SceneManager.LoadScene("GameWin");
+        else {
+            DontDestroyOnLoad(gameObject);
         }
+    }
+
+    void Update() {
+        if (SceneManager.GetActiveScene().name == "Level 1") {
+            if (countdown.TimeStart < 0) {
+                SceneManager.LoadScene("GameOver");
+            }
+            else if (validationDuckManager.ScorePoint >= 1000) {
+                FinalScore = countdown.TimeStart;
+                SceneManager.LoadScene("GameWin");
+            }
+        }
+
     }
 }

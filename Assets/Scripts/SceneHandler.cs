@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour {
     public bool menuOnOff;
-    void Awake() {
-        int numGameSessions = FindObjectsOfType<SceneHandler>().Length;
-        if (numGameSessions > 1) {
-            Destroy(gameObject);
-        }
-        else {
-            DontDestroyOnLoad(gameObject);
-        }
-    }
+    //void Awake() {
+    //    int numGameSessions = FindObjectsOfType<SceneHandler>().Length;
+    //    if (numGameSessions > 1) {
+    //        Destroy(gameObject);
+    //    }
+    //    else {
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //}
 
     public void MainMenu() {
         SceneManager.LoadScene(0);
