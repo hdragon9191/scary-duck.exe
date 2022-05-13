@@ -15,12 +15,16 @@ public class ConveyBeltSwitcher : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        tooltipText.SetActive(true);
-        tooltipText.GetComponent<TextMeshProUGUI>().text = "Press E to power On/Off";
+        if (other.tag == "Player") {
+            tooltipText.SetActive(true);
+            tooltipText.GetComponent<TextMeshProUGUI>().text = "Press E to power On/Off";
+        }
+
     }
 
     private void OnTriggerExit(Collider other) {
-        tooltipText.SetActive(false);
+        if (other.tag == "Player")
+            tooltipText.SetActive(false);
     }
 
 }

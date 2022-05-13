@@ -43,11 +43,15 @@ public class SpawnManager : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        tooltipText.SetActive(true);
-        tooltipText.GetComponent<TextMeshProUGUI>().text = "Press Arrow Down or Up to variate the spawn ratio";
+        if (other.tag == "Player") {
+            tooltipText.SetActive(true);
+            tooltipText.GetComponent<TextMeshProUGUI>().text = "Press Arrow Down or Up to variate the spawn ratio";
+        }
     }
+
     private void OnTriggerExit(Collider other) {
-        tooltipText.SetActive(false);
+        if (other.tag == "Player")
+            tooltipText.SetActive(false);
     }
 
     private void CalibrateRatioSpawn(float amount) {
