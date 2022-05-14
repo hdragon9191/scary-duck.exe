@@ -5,15 +5,15 @@ using TMPro;
 
 public class FinalScorePoint : MonoBehaviour
 {
-    GameOverManager gameOverManager;
+    SceneHandler sceneHandler;
     [SerializeField] TextMeshProUGUI finalScorePointText;
     void Start()
     {
-        gameOverManager = FindObjectOfType<GameOverManager>();
+        sceneHandler = FindObjectOfType<SceneHandler>();
     }
 
     void Update()
     {
-        finalScorePointText.text = "You Won! Total score is: " + Mathf.RoundToInt(gameOverManager.FinalScore);
+        finalScorePointText.text = "You Won! Total score is: " + Mathf.RoundToInt(sceneHandler.FinalScore);
     }
 }

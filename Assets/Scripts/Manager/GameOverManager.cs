@@ -8,33 +8,24 @@ public class GameOverManager : MonoBehaviour {
     [SerializeField] ValidationDuckManager validationDuckManager;
     public float FinalScore;
     public static GameOverManager instance;
-
-    private void Start() {
-        DontDestroyOnLoad(this);
-    }
+    SceneHandler sceneHandler;
 
     private void Awake() {
-        if (instance == null) {
-            instance = this;
-        }
-        else
-            Destroy(gameObject);
+        FinalScore = 0;
+        sceneHandler = FindObjectOfType<SceneHandler>();
     }
 
     void Update() {
         if (SceneManager.GetActiveScene().name == "Level 1") {
             if (countdown.TimeStart < 0) {
-                SceneManager.LoadScene("GameOver");
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                sceneHandler.LoadGameOver();
             }
             else if (validationDuckManager.ScorePoint >= 1000) {
                 FinalScore = countdown.TimeStart;
-                SceneManager.LoadScene("GameWin");
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                sceneHandler.LoadGameWin(FinalScore);
             }
         }
 
     }
+
 }
