@@ -13,6 +13,7 @@ public class FootstepController : MonoBehaviour
 
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         firstPersonController = GetComponent<FirstPersonController>();
     }
 
