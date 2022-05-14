@@ -6,20 +6,21 @@ using UnityEngine.Audio;
 
 public class VolumeSlider : MonoBehaviour
 {
-    AudioSource gameBackground;
+    //AudioSource gameBackground;
     Slider slider;
     public AudioMixer masterMixer;
 
     void Start() {
         slider = GetComponent<Slider>();
-        gameBackground = FindObjectOfType<AudioSource>();
-        slider.value = gameBackground.volume;
+        //gameBackground = FindObjectOfType<AudioSource>();
+        //slider.value = gameBackground.volume;
 
     }
 
     void Update() {
-        gameBackground.volume = slider.value;
-        SetSound((81* gameBackground.volume)-81);
+        //gameBackground.volume = slider.value;
+        //SetSound((81* gameBackground.volume)-81);
+        SetSound(slider.value);
     }
 
     public void SetSound(float soundLevel)

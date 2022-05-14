@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour {
 
     private bool music_on = false;
     private float fade = 0.0f;
-    private float fadeTime = 8.0f;
+    private float fadeTime = 15.0f;
     private float backgroundVolume;
     private float musicVolume;
 

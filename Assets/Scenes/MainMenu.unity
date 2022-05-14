@@ -878,7 +878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 185.43608, y: 24.317375}
+  m_AnchoredPosition: {x: 185.4361, y: 24.317383}
   m_SizeDelta: {x: 406.3, y: 118.5841}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &787176759
@@ -2051,6 +2051,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1742585532, guid: f6da11fd597c0e646b0d6ee30c1456ae, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8723312102595430556, guid: f6da11fd597c0e646b0d6ee30c1456ae, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -2101,7 +2105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8723312104095788783, guid: f6da11fd597c0e646b0d6ee30c1456ae, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6da11fd597c0e646b0d6ee30c1456ae, type: 3}

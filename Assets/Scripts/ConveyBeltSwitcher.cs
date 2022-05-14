@@ -15,10 +15,6 @@ public class ConveyBeltSwitcher : MonoBehaviour {
     private void OnTriggerStay(Collider other) {
         if (Input.GetKeyDown(KeyCode.E) && other.gameObject.tag == "Player") {
             conveyorBeltActivator.IsActive = !conveyorBeltActivator.IsActive;
-            if (conveyorBeltActivator.IsActive)
-                audioManager.ConveyorOnClip();
-            else
-                audioManager.ConveyorOffClip();
         }
     }
 
