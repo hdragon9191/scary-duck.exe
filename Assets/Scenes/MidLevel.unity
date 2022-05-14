@@ -589,7 +589,7 @@ PrefabInstance:
       objectReference: {fileID: 315489336}
     - target: {fileID: 424173710200738879, guid: eac3ee555c3ded849ada0f38bd34f8ed, type: 3}
       propertyPath: TimeLostPerDuck
-      value: 11
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eac3ee555c3ded849ada0f38bd34f8ed, type: 3}
@@ -11175,7 +11175,7 @@ PrefabInstance:
       objectReference: {fileID: 315489336}
     - target: {fileID: 424173710200738879, guid: eac3ee555c3ded849ada0f38bd34f8ed, type: 3}
       propertyPath: TimeLostPerDuck
-      value: 11
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eac3ee555c3ded849ada0f38bd34f8ed, type: 3}
@@ -14592,7 +14592,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.45e-43, y: -3.6001555e-38, z: 6.45e-43, w: 2.8731448e-11}
+  m_BoundingSphereOverride: {x: 4.2e-44, y: 1.2997e-41, z: 1.02e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -15337,7 +15337,7 @@ PrefabInstance:
       objectReference: {fileID: 315489336}
     - target: {fileID: 424173710200738879, guid: eac3ee555c3ded849ada0f38bd34f8ed, type: 3}
       propertyPath: TimeLostPerDuck
-      value: 11
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eac3ee555c3ded849ada0f38bd34f8ed, type: 3}
@@ -15882,7 +15882,7 @@ MonoBehaviour:
   cameraRoot: {fileID: 256218684}
   duckImageToShow: {fileID: 674032481}
   DuckSpawner: {fileID: 499661488}
-  skipTutorial: 0
+  skipTutorial: 1
 --- !u!4 &1954583121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6620606471315125639, guid: bce8780e1f8988b4bbe82f948edb37c0, type: 3}
