@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] AudioSource musicAudioSource;
     [SerializeField] AudioSource fxAudioSource;
     [SerializeField] AudioSource paAudioSource;
+    [SerializeField] AudioSource footstepAudioSource;
     [SerializeField] AudioClip lightsSwitchOn;
     [SerializeField] AudioClip lightsSwitchOff;
     [SerializeField] AudioClip ambienceLightsOn;
@@ -17,6 +18,8 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] AudioClip buttonClip;
     [SerializeField] AudioClip conveyorOn;
     [SerializeField] AudioClip conveyorOff;
+    [SerializeField] AudioClip footstepRight;
+    [SerializeField] AudioClip footstepLeft;
     [SerializeField] AudioClip[] paClips;
 
     private bool music_on = false;
@@ -41,9 +44,6 @@ public class AudioManager : MonoBehaviour {
 
         backgroundVolume = backgroundAudioSource.volume;
         musicVolume = musicAudioSource.volume;
-
-        //StartMusic();
-        //paAudioSource.PlayOneShot(paClips[0]);
     }
 
     private void FixedUpdate()
@@ -134,4 +134,13 @@ public class AudioManager : MonoBehaviour {
         fxAudioSource.PlayOneShot(conveyorOff);
     }
 
+    public void FootstepLeft()
+    {
+        footstepAudioSource.PlayOneShot(footstepLeft);
+    }
+
+    public void FootstepRight()
+    {
+        footstepAudioSource.PlayOneShot(footstepRight);
+    }
 }
