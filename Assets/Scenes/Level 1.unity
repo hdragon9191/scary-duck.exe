@@ -4425,6 +4425,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8723312102595430558, guid: f6da11fd597c0e646b0d6ee30c1456ae, type: 3}
+      propertyPath: dropBadDuck
+      value: 
+      objectReference: {fileID: 8300000, guid: efa3f9bd5ed49994d850621a7b59862b, type: 3}
+    - target: {fileID: 8723312102595430558, guid: f6da11fd597c0e646b0d6ee30c1456ae, type: 3}
+      propertyPath: dropGoodDuck
+      value: 
+      objectReference: {fileID: 8300000, guid: 4653eb24547abbb42888b0131f25c34e, type: 3}
+    - target: {fileID: 8723312102595430558, guid: f6da11fd597c0e646b0d6ee30c1456ae, type: 3}
       propertyPath: footstepLeft
       value: 
       objectReference: {fileID: 8300000, guid: 7eba1ced9306e004c95264946a2013c5, type: 3}
@@ -4432,6 +4440,14 @@ PrefabInstance:
       propertyPath: footstepRight
       value: 
       objectReference: {fileID: 8300000, guid: c87dd7b7683992a4a80c35840af12d90, type: 3}
+    - target: {fileID: 8723312102595430558, guid: f6da11fd597c0e646b0d6ee30c1456ae, type: 3}
+      propertyPath: pickUpBadDuck
+      value: 
+      objectReference: {fileID: 8300000, guid: 5691d7e2d80e94b4d89ba69aaea2cd51, type: 3}
+    - target: {fileID: 8723312102595430558, guid: f6da11fd597c0e646b0d6ee30c1456ae, type: 3}
+      propertyPath: pickUpGoodDuck
+      value: 
+      objectReference: {fileID: 8300000, guid: da427a01acb34a64a9c935e475888086, type: 3}
     - target: {fileID: 8723312102595430558, guid: f6da11fd597c0e646b0d6ee30c1456ae, type: 3}
       propertyPath: footstepAudioSource
       value: 
@@ -14556,7 +14572,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -3.222964e-39, z: 6.45e-43, w: 3.4e-44}
+  m_BoundingSphereOverride: {x: 0, y: 2.0737224e+23, z: 6.45e-43, w: 1.36e-43}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0

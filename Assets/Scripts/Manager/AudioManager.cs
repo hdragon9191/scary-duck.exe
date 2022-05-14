@@ -20,6 +20,10 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] AudioClip conveyorOff;
     [SerializeField] AudioClip footstepRight;
     [SerializeField] AudioClip footstepLeft;
+    [SerializeField] AudioClip pickUpGoodDuck;
+    [SerializeField] AudioClip dropGoodDuck;
+    [SerializeField] AudioClip pickUpBadDuck;
+    [SerializeField] AudioClip dropBadDuck;
     [SerializeField] AudioClip[] paClips;
 
     private bool music_on = false;
@@ -46,23 +50,19 @@ public class AudioManager : MonoBehaviour {
         musicVolume = musicAudioSource.volume;
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
         Fade();
-        if (!pa_done && SceneManager.GetActiveScene().name=="Level 1") CheckPA();
+        if (!pa_done && SceneManager.GetActiveScene().name == "Level 1") CheckPA();
     }
 
-    private void Fade()
-    {
-        if (music_on && (fade < 1.0f))
-        {
+    private void Fade() {
+        if (music_on && (fade < 1.0f)) {
             fade += (Time.fixedDeltaTime / fadeTime);
             if (fade > 1.0f) fade = 1.0f;
             musicAudioSource.volume = fade * musicVolume;
             backgroundAudioSource.volume = (1.0f - fade) * backgroundVolume;
         }
-        else if (!music_on && (fade > 0.0f))
-        {
+        else if (!music_on && (fade > 0.0f)) {
             fade -= (Time.fixedDeltaTime / fadeTime);
             if (fade < 0.0f) fade = 0.0f;
             musicAudioSource.volume = (1.0f - fade) * musicVolume;
@@ -70,8 +70,7 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
-    private void CheckPA()
-    {
+    private void CheckPA() {
         pa_timer += Time.fixedDeltaTime;
 
         if (pa_count == 0) {
@@ -79,15 +78,12 @@ public class AudioManager : MonoBehaviour {
             pa_count++;
         }
         else
-        if (pa_timer >= pa_wait_time)
-        {
-            if (pa_count < paClips.Length)
-            {
+        if (pa_timer >= pa_wait_time) {
+            if (pa_count < paClips.Length) {
                 paAudioSource.PlayOneShot(paClips[pa_count]);
                 pa_count++;
             }
-            else
-            {
+            else {
                 StartMusic();
                 pa_done = true;
             }
@@ -95,27 +91,23 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
-    public void LightsOn()
-    {
+    public void LightsOn() {
         backgroundAudioSource.clip = ambienceLightsOn;
         backgroundAudioSource.Play();
     }
 
-    public void LightsOff()
-    {
+    public void LightsOff() {
         backgroundAudioSource.clip = ambienceLightsOff;
         backgroundAudioSource.Play();
     }
 
-    public void StartMusic()
-    {
+    public void StartMusic() {
         music_on = true;
         musicAudioSource.Stop();
         musicAudioSource.Play();
     }
 
-    public void StopMusic()
-    {
+    public void StopMusic() {
         music_on = false;
     }
 
@@ -130,17 +122,27 @@ public class AudioManager : MonoBehaviour {
     public void ConveyorOnClip() {
         fxAudioSource.PlayOneShot(conveyorOn);
     }
+    public void PickUpGoodDuckClip() {
+        fxAudioSource.PlayOneShot(pickUpGoodDuck);
+    }
+    public void DropGoodDuckClip() {
+        fxAudioSource.PlayOneShot(dropGoodDuck);
+    }
+    public void PickUpBadDuckClip() {
+        fxAudioSource.PlayOneShot(pickUpBadDuck);
+    }
+    public void DropBadDuckClip() {
+        fxAudioSource.PlayOneShot(dropBadDuck);
+    }
     public void ConveyorOffClip() {
         fxAudioSource.PlayOneShot(conveyorOff);
     }
 
-    public void FootstepLeft()
-    {
+    public void FootstepLeft() {
         footstepAudioSource.PlayOneShot(footstepLeft);
     }
 
-    public void FootstepRight()
-    {
+    public void FootstepRight() {
         footstepAudioSource.PlayOneShot(footstepRight);
     }
 }
