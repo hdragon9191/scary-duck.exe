@@ -6,7 +6,7 @@ using TMPro;
 
 public class Countdown : MonoBehaviour {
 	public float TimeStart = 1000;
-	public TextMeshProUGUI textBox;
+	[SerializeField] TextMeshProUGUI textBox;
 
 	void Start() {
 		textBox.text = TimeStart.ToString();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour {
     [SerializeField] AudioSource backgroundAudioSource;
@@ -48,7 +49,7 @@ public class AudioManager : MonoBehaviour {
     private void FixedUpdate()
     {
         Fade();
-        if (!pa_done) CheckPA();
+        if (!pa_done && SceneManager.GetActiveScene().name=="Level 1") CheckPA();
     }
 
     private void Fade()
@@ -73,6 +74,11 @@ public class AudioManager : MonoBehaviour {
     {
         pa_timer += Time.fixedDeltaTime;
 
+        if (pa_count == 0) {
+            paAudioSource.PlayOneShot(paClips[pa_count]);
+            pa_count++;
+        }
+        else
         if (pa_timer >= pa_wait_time)
         {
             if (pa_count < paClips.Length)
