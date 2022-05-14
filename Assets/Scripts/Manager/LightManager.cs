@@ -3,21 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class LightManager : MonoBehaviour
-{
+public class LightManager : MonoBehaviour {
     public bool IsActive;
     int children;
     [SerializeField] GameObject tooltipText;
+    [SerializeField] Countdown countdown;
 
     private void Start() {
         IsActive = true;
         children = transform.childCount;
     }
     void Update() {
-        OperativeMachine(IsActive);
+        if (countdown.TimeStart == 400f) {
+            IsActive = false;
+        }
+        if (countdown.TimeStart == 700f) {
+            IsActive = false;
+        }
+        if (countdown.TimeStart == 100f) {
+            IsActive = false;
+        }
+        LightsActive(IsActive);
     }
 
-    private void OperativeMachine(bool active) {
+    private void LightsActive(bool active) {
         for (int i = 0; i < children; ++i)
             transform.GetChild(i).gameObject.SetActive(active);
     }
@@ -25,7 +34,7 @@ public class LightManager : MonoBehaviour
 
     private void OnTriggerStay(Collider other) {
         if (Input.GetKeyDown(KeyCode.E) && other.gameObject.tag == "Player") {
-           IsActive = !IsActive;
+            IsActive = !IsActive;
         }
     }
 
