@@ -34,7 +34,7 @@ public class TriggerEventJobDescription : MonoBehaviour {
     IEnumerator JobDescriptionTutorial() {
         animator.enabled = true;
      //   audioSource.PlayOneShot(jobDescriptionVocal);
-        yield return new WaitForSeconds(2.9f);
+        yield return new WaitForSeconds(2.7f);
         duckImageToShow.SetActive(true);
         triggerEventIsEnded = true;
         animator.enabled = false;
