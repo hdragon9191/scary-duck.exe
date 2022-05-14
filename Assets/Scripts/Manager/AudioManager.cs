@@ -24,6 +24,8 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] AudioClip dropGoodDuck;
     [SerializeField] AudioClip pickUpBadDuck;
     [SerializeField] AudioClip dropBadDuck;
+    [SerializeField] AudioClip winClip;
+    [SerializeField] AudioClip loseClip;
     [SerializeField] AudioClip[] paClips;
 
     private bool music_on = false;
@@ -113,6 +115,12 @@ public class AudioManager : MonoBehaviour {
 
     public void OpenDoorClip() {
         fxAudioSource.PlayOneShot(openLockerClip);
+    }
+    public void WinClip() {
+        fxAudioSource.PlayOneShot(winClip);
+    }
+    public void LoseClip() {
+        fxAudioSource.PlayOneShot(loseClip);
     }
 
     public void ButtonClip() {

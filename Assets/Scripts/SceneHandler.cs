@@ -9,8 +9,10 @@ public class SceneHandler : MonoBehaviour {
     public bool menuOnOff;
     public static SceneHandler instance;
     public float FinalScore;
+    AudioManager audioManager;
     private void Start() {
         DontDestroyOnLoad(this);
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Awake() {
@@ -32,6 +34,7 @@ public class SceneHandler : MonoBehaviour {
         SceneManager.LoadScene("GameOver");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        audioManager.LoseClip();
     }
 
     public void LoadGameWin(float finalScore) {
@@ -39,6 +42,7 @@ public class SceneHandler : MonoBehaviour {
         FinalScore = finalScore;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        audioManager.WinClip();
     }
 
     public void RestartLevel() {
