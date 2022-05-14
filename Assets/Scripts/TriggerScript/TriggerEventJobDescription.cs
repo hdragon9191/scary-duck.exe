@@ -10,8 +10,6 @@ public class TriggerEventJobDescription : MonoBehaviour {
     [SerializeField] Animator animator;
     [SerializeField] GameObject cameraRoot;
     [SerializeField] GameObject duckImageToShow;
- //   [SerializeField] AudioClip jobDescriptionVocal;
-  //  [SerializeField] AudioSource audioSource;
     [SerializeField] DuckSpawner DuckSpawner;
 
     GameObject cameraRootStarter = null;
@@ -33,7 +31,6 @@ public class TriggerEventJobDescription : MonoBehaviour {
 
     IEnumerator JobDescriptionTutorial() {
         animator.enabled = true;
-     //   audioSource.PlayOneShot(jobDescriptionVocal);
         yield return new WaitForSeconds(2.7f);
         duckImageToShow.SetActive(true);
         triggerEventIsEnded = true;

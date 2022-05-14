@@ -10203,6 +10203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsActive: 1
   tooltipText: {fileID: 886703056}
+  countdown: {fileID: 315489336}
 --- !u!65 &1220862944
 BoxCollider:
   m_ObjectHideFlags: 0
