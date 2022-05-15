@@ -94,7 +94,6 @@ using UnityEngine.InputSystem;
 
 		private void Start()
 		{
-            Cursor.lockState = CursorLockMode.Locked;
 			_controller = GetComponent<CharacterController>();
 
 			// reset our timeouts on start
@@ -104,7 +103,15 @@ using UnityEngine.InputSystem;
 
 		private void Update()
 		{
-            // Application.targetFrameRate = fpsLimit;
+			if (Time.timeScale == 1)
+			{
+            Cursor.lockState = CursorLockMode.Locked;
+			}
+			else if (Time.timeScale == 0)
+			{
+            Cursor.lockState = CursorLockMode.None;
+			}
+            Application.targetFrameRate = fpsLimit;
 			JumpAndGravity();
 			GroundedCheck();
 			Move();

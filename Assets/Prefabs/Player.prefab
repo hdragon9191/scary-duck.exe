@@ -202,7 +202,7 @@ MonoBehaviour:
   targetSpeed: 0
   inputDirection: {x: 0, y: 0, z: 0}
   CameraRootOfCameraRoot: {fileID: 4345004808647505961}
-  fpsLimit: 30
+  fpsLimit: 50
   decreaseSpeed: 0
 --- !u!114 &4673175068091069170
 MonoBehaviour:
@@ -785,15 +785,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.019999998
+      value: -0.020000137
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8000001
+      value: 2.2999997
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.000000113621354
+      value: 0.00000008009374
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalRotation.w
