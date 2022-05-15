@@ -16257,7 +16257,7 @@ MonoBehaviour:
   cameraRoot: {fileID: 256218684}
   duckImageToShow: {fileID: 674032481}
   DuckSpawner: {fileID: 499661488}
-  skipTutorial: 1
+  skipTutorial: 0
 --- !u!4 &1954583121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6620606471315125639, guid: bce8780e1f8988b4bbe82f948edb37c0, type: 3}
